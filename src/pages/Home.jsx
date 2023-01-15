@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
-import { getWeatherInfo } from "../services/apiCall";
+import { getWeatherInfo, getWeatherInfoByName } from "../services/apiCall";
 
 const Home = () => {
-    const [cityName, setCityName] = useState("");
+    const [cityName, setCityName] = useState();
     const [userLatitude, setUserLatitude] = useState();
     const [userLongitude, setUserLongitude] = useState();
 
@@ -21,15 +21,23 @@ const Home = () => {
         }
     };
 
-    const getUserWeatherInfo = async () => {
+    const getWeatherByName = async () => {
+        if (cityName != undefined) {
+            const weatherInfo = await getWeatherInfoByName(cityName);
+            console.log(weatherInfo);
+        }
+    }
+
+    const getWeatherByUserCoords = async () => {
         if (userLatitude != undefined && userLongitude != undefined) {
             const weatherInfo = await getWeatherInfo(userLatitude, userLongitude);
         }
     }
     
     useEffect(() => {
+        getWeatherByName();
         getGeolocationInfo();
-        getUserWeatherInfo();
+        getWeatherByUserCoords();
     });
 
 
