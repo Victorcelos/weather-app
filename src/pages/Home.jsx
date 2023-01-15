@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
@@ -6,6 +6,25 @@ import { Footer } from "../components/Footer/Footer";
 
 const Home = () => {
     const [cityName, setCityName] = useState("");
+    const [userLatitude, setUserLatitude] = useState();
+    const [userLongitude, setUserLongitude] = useState();
+
+    const getGeolocationInfo = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                setUserLatitude(position.coords.latitude);
+                setUserLongitude(position.coords.longitude);
+            });
+        } else {
+            console.log("Geolocation is not supported by this browser");
+        }
+    };
+    
+
+    useEffect(() => {
+        getGeolocationInfo();
+    });
+
 
     return (
         <>
