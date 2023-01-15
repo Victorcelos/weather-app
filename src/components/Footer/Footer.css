@@ -1,1 +1,15 @@
 @charset "UTF-8";
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    padding: 0.8rem;
+
+    position: absolute;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: normal;
+}
