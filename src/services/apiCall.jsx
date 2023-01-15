@@ -6,3 +6,10 @@ export const getWeatherInfo = async (lat, lon) => {
     const fetchResponse = await fetch(API_URL);
     return await fetchResponse.json();
 };
+
+export const getWeatherInfoByName = async (name) => {
+    const API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=${API_KEY}`;
+
+    const fetchResponse = await fetch(API_URL);
+    return await fetchResponse.json();
+}
