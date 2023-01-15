@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
+import { Weather } from "../components/Weather/Weather";
 import { getWeatherInfo, getWeatherInfoByName } from "../services/apiCall";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
     const [weatherData, setWeatherData] = useState();
     const [userLatitude, setUserLatitude] = useState();
     const [userLongitude, setUserLongitude] = useState();
+    const [weatherGeolocation, setWeatherGeolocation] = useState();
 
     const getGeolocationInfo = () => {
         if (navigator.geolocation) {
@@ -32,7 +34,7 @@ const Home = () => {
     const getWeatherByUserCoords = async () => {
         if (userLatitude != undefined && userLongitude != undefined) {
             const weatherInfo = await getWeatherInfo(userLatitude, userLongitude);
-            setWeatherData(weatherInfo);
+            setWeatherGeolocation(weatherInfo);
         }
     }
     
@@ -40,8 +42,6 @@ const Home = () => {
         getGeolocationInfo();
         getWeatherByUserCoords();
     }, []);
-
-    console.log(weatherData);
 
     return (
         <>
@@ -54,6 +54,7 @@ const Home = () => {
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
             </section>
+            {!weatherData ? <Weather weatherData={weatherGeolocation} /> : <Weather weatherData={weatherData[0]} />}
         </main>
         <Footer />
         </>
