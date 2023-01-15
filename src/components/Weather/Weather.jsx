@@ -1,7 +1,6 @@
 import React from "react";
 
-export const Weather = ({weatherData}) => {
-    console.log(weatherData);
+export const Weather = () => {
     return (
         <section className="main-section-info">
 
