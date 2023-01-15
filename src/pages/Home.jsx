@@ -24,7 +24,6 @@ const Home = () => {
     const getWeatherByName = async () => {
         if (cityName != undefined) {
             const weatherInfo = await getWeatherInfoByName(cityName);
-            console.log(weatherInfo);
         }
     }
 
