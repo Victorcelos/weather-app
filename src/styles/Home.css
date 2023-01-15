@@ -32,3 +32,13 @@
     border-radius: 0.5rem;
     border: 1px solid #6B6B6B;
 }
+
+.main-title-message {
+    padding: 0.8rem;
+    margin: 5.5rem 0;
+
+    font-size: 1.3rem;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
