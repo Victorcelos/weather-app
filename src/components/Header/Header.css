@@ -1,1 +1,24 @@
 @charset "UTF-8";
+
+.header {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title {
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+}
+
+.header-button {
+    padding: 0.5rem;
+
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    border-radius: 0.5rem;
+}
