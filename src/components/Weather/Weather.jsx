@@ -17,11 +17,16 @@ export const Weather = ({weatherData}) => {
         getWeatherData();
     }, []);
 
-    console.log(weatherInfo)
+    console.log(weatherData)
 
     return (
         <section className="main-section-info">
+            <article className="info-article-one">
+                <h1 className="article-one-title">{weatherData.name} - </h1>
+            </article>
+            <article className="info-article-two">
 
+            </article>
         </section>
     );
 };
