@@ -1,11 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import { getWeatherInfo } from "../../services/apiCall";
 
 export const Weather = ({weatherData}) => {
-    console.log(weatherData);
+    const [latitudeInfo] = useState(weatherData.lat);
+    const [longitudeInfo] = useState(weatherData.lon);
     const [weatherInfo, setWeatherInfo] = useState();
-    const [weatherLatitude, setWeatherLatitude] = useState();
-    const [weatherLongitude, setWeatherLongitude] = useState();
+
+    const getWeatherData = async () => {
+        if (latitudeInfo && longitudeInfo) {
+            const weatherInfo = await getWeatherInfo(latitudeInfo, longitudeInfo);
+            setWeatherInfo(weatherInfo);
+        }
+    };
+
+    useEffect(() => {
+        getWeatherData();
+    }, []);
+
+    console.log(weatherInfo)
 
     return (
         <section className="main-section-info">
