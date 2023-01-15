@@ -73,7 +73,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Project Link: [https://github.com/Victorcerlos/login-page](https://github.com/Victorcerlos/login-page)
+Project Link: [https://github.com/Victorcelos/weather-app](https://github.com/Victorcelos/weather-app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
