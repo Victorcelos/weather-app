@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
+import { getWeatherInfo } from "../services/apiCall";
 
 const Home = () => {
     const [cityName, setCityName] = useState("");
@@ -19,10 +20,16 @@ const Home = () => {
             console.log("Geolocation is not supported by this browser");
         }
     };
-    
 
+    const getUserWeatherInfo = async () => {
+        if (userLatitude != undefined && userLongitude != undefined) {
+            const weatherInfo = await getWeatherInfo(userLatitude, userLongitude);
+        }
+    }
+    
     useEffect(() => {
         getGeolocationInfo();
+        getUserWeatherInfo();
     });
 
 
