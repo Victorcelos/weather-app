@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Weather } from "../components/Weather/Weather";
-import { getWeatherInfo, getWeatherInfoByName } from "../services/apiCall";
+import { getWeatherInfoByName } from "../services/apiCall";
 
 const Home = () => {
     const [cityName, setCityName] = useState();
@@ -28,7 +28,9 @@ const Home = () => {
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
             </section>
-            {!weatherData ? <h1>Search</h1> : <Weather weatherData={weatherData[0]} />}
+            {!weatherData 
+            ? <h1 className="main-title-message">Search for a city to get its information</h1> 
+            : <Weather weatherData={weatherData[0]} />}
         </main>
         <Footer />
         </>
