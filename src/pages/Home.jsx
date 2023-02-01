@@ -4,7 +4,7 @@ import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 import { Weather } from "../components/Weather/Weather";
-import { getWeatherInfoByName } from "../services/apiCall";
+import { getWeatherInfoByName } from "../services/api/apiCall";
 
 const Home = () => {
     const [cityName, setCityName] = useState();
