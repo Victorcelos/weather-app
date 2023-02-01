@@ -22,7 +22,9 @@ export const Weather = ({weatherData}) => {
     }
 
     const convertKelvinToCelsius = (kelvinValue) => {
-        return kelvinValue - 273.15;
+        const celsiusValue = kelvinValue - 273.15;
+
+        return celsiusValue.toFixed(0);
     }
 
     useEffect(() => {
@@ -37,7 +39,7 @@ export const Weather = ({weatherData}) => {
             </article>
             <article className="info-article-two">
                 <div className="article-two-temperature">
-                    <h1 className="temperature-value">{weatherInfo?.main?.temp}º</h1>
+                    <h1 className="temperature-value">{convertKelvinToCelsius(weatherInfo?.main?.temp)}º</h1>
                 </div>
             </article>
         </section>
