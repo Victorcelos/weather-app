@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from "react";
-import { getWeatherInfo } from "../../services/apiCall";
-import { getCountryInfo } from "../../services/restCountries";
+import { getWeatherInfo } from "../../services/api/apiCall";
+import { getCountryInfo } from "../../services/api/restCountries";
 
 export const Weather = ({weatherData}) => {
     const [latitudeInfo] = useState(weatherData.lat);
@@ -26,16 +26,15 @@ export const Weather = ({weatherData}) => {
         getCountryData();
     }, []);
 
-    console.log(weatherData);
-    console.log(countryInfo);
-
     return (
         <section className="main-section-info">
             <article className="info-article-one">
                 <h1 className="article-one-title">{weatherData.name} - {countryInfo?.name?.common}</h1>
             </article>
             <article className="info-article-two">
-
+                <div className="article-two-temperature">
+                    <h1 className="temperature-value">0º</h1>
+                </div>
             </article>
         </section>
     );
