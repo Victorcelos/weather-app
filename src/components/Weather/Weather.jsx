@@ -21,6 +21,10 @@ export const Weather = ({weatherData}) => {
         setCountryInfo(countryInfo[0]);
     }
 
+    const convertKelvinToCelsius = (kelvinValue) => {
+        return kelvinValue - 273.15;
+    }
+
     useEffect(() => {
         getWeatherData();
         getCountryData();
@@ -33,7 +37,7 @@ export const Weather = ({weatherData}) => {
             </article>
             <article className="info-article-two">
                 <div className="article-two-temperature">
-                    <h1 className="temperature-value">0º</h1>
+                    <h1 className="temperature-value">{weatherInfo?.main?.temp}º</h1>
                 </div>
             </article>
         </section>
