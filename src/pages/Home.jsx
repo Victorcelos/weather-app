@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
@@ -15,11 +15,7 @@ const Home = () => {
             const weatherInfo = await getWeatherInfoByName(cityName);
             setWeatherData(weatherInfo);
         }
-    }
-
-    useEffect(() => {
-        getWeatherByName();
-    }, []);
+    };
 
     return (
         <>
