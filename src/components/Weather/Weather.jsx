@@ -47,14 +47,40 @@ export const Weather = ({weatherData}) => {
                 <h2 className="weather-description">{weatherInfo?.weather[0]?.description}</h2>
             </article>
         </section>
-        <section className="main-section-info" id="section-info-two">
-            <div className="article-three-max">
-                <h2 className="max-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_max)}º</h2>
-                <h2 className="max-title">High</h2>
+        <section className="main-section-info" id="section-info">
+            <div className="article-info">
+                <h2 className="article-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_max)}º</h2>
+                <h2 className="article-title">High</h2>
             </div>
-            <div className="article-three-min">
-                <h2 className="max-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_min)}º</h2>
-                <h2 className="max-title">Low</h2>
+            <div className="article-info">
+                <h2 className="article-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_min)}º</h2>
+                <h2 className="article-title">Low</h2>
+            </div>
+            <div className="article-info">
+                <h2 className="article-value">{convertKelvinToCelsius(weatherInfo?.main?.feels_like)}º</h2>
+                <h2 className="article-title">F. Like</h2>
+            </div>
+            <div className="article-info">
+                <h2 className="article-value">{weatherInfo?.main?.humidity} %</h2>
+                <h2 className="article-title">Humidity</h2>
+            </div>
+        </section>
+        <section className="main-section-info" id="section-info">
+            <div className="article-info">
+                <h2 className="article-value">{weatherInfo?.wind?.speed} M/s</h2>
+                <h2 className="article-title">Wind</h2>
+            </div>
+            <div className="article-info">
+                <h2 className="article-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_min)}º</h2>
+                <h2 className="article-title">Low</h2>
+            </div>
+            <div className="article-info">
+                <h2 className="article-value">{weatherInfo?.sys?.sunrise}</h2>
+                <h2 className="article-title">Sunrise</h2>
+            </div>
+            <div className="article-info">
+                <h2 className="article-value">{weatherInfo?.sys?.sunset}</h2>
+                <h2 className="article-title">Sunset</h2>
             </div>
         </section>
         </>
