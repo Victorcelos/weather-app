@@ -47,3 +47,33 @@
     font-size: 1.5em;
     text-transform: capitalize;
 }
+
+#section-info-two {
+    margin: 0.5rem 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.article-three-max,
+.article-three-min {
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.max-title,
+.min-title {
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.max-value,
+.min-value {
+    font-size: 1.25rem;
+}
