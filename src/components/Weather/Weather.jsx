@@ -79,10 +79,6 @@ export const Weather = ({weatherData}) => {
                 <h2 className="article-title">Wind</h2>
             </div>
             <div className="article-info">
-                <h2 className="article-value">{convertKelvinToCelsius(weatherInfo?.main?.temp_min)}º</h2>
-                <h2 className="article-title">Low</h2>
-            </div>
-            <div className="article-info">
                 <h2 className="article-value">{convertUnixToUTC(weatherInfo?.sys?.sunrise)}</h2>
                 <h2 className="article-title">Sunrise</h2>
             </div>
