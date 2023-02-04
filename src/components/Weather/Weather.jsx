@@ -1,4 +1,6 @@
 import React, {useEffect, useState } from "react";
+
+import './Weather.css';
 import { getWeatherInfo } from "../../services/api/apiCall";
 import { getCountryInfo } from "../../services/api/restCountries";
 
