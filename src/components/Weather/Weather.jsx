@@ -21,13 +21,21 @@ export const Weather = ({weatherData}) => {
     const getCountryData = async () => {
         const countryInfo = await getCountryInfo(weatherData.country);
         setCountryInfo(countryInfo[0]);
-    }
+    };
 
     const convertKelvinToCelsius = (kelvinValue) => {
         const celsiusValue = kelvinValue - 273.15;
 
         return celsiusValue.toFixed(0);
-    }
+    };
+
+    const convertUnixToUTC = (timestamp) => {
+        const newDate = new Date(timestamp * 1000);
+        const hoursUTC = newDate.getUTCHours();
+        const minutesUTC = newDate.getUTCMinutes();
+
+        return hoursUTC + ":" + minutesUTC;
+    };
 
     useEffect(() => {
         getWeatherData();
@@ -75,11 +83,11 @@ export const Weather = ({weatherData}) => {
                 <h2 className="article-title">Low</h2>
             </div>
             <div className="article-info">
-                <h2 className="article-value">{weatherInfo?.sys?.sunrise}</h2>
+                <h2 className="article-value">{convertUnixToUTC(weatherInfo?.sys?.sunrise)}</h2>
                 <h2 className="article-title">Sunrise</h2>
             </div>
             <div className="article-info">
-                <h2 className="article-value">{weatherInfo?.sys?.sunset}</h2>
+                <h2 className="article-value">{convertUnixToUTC(weatherInfo?.sys?.sunset)}</h2>
                 <h2 className="article-title">Sunset</h2>
             </div>
         </section>
