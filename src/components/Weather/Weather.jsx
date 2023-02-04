@@ -41,8 +41,9 @@ export const Weather = ({weatherData}) => {
             </article>
             <article className="info-article-two">
                 <div className="article-two-temperature">
-                    <h1 className="temperature-value">{convertKelvinToCelsius(weatherInfo?.main?.temp)}º</h1>
+                    <h2 className="temperature-value">{convertKelvinToCelsius(weatherInfo?.main?.temp)}º</h2>
                 </div>
+                <h2 className="weather-description">{weatherInfo?.weather[0]?.description}</h2>
             </article>
         </section>
     );
