@@ -15,7 +15,14 @@
 }
 
 .info-article-one,
-.info-article-two {padding: 0.5rem;}
+.info-article-two {
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .article-one-title {font-size: 1.5rem;}
 
@@ -34,4 +41,9 @@
 
     font-size: 3.5rem;
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+.weather-description {
+    font-size: 1.5em;
+    text-transform: capitalize;
 }
