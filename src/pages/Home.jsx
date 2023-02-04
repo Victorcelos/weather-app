@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import '../styles/Home.css';
 import { Header } from "../components/Header/Header";
@@ -16,6 +16,10 @@ const Home = () => {
             setWeatherData(weatherInfo);
         }
     }
+
+    useEffect(() => {
+        getWeatherByName();
+    }, []);
 
     return (
         <>
